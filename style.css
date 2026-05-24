@@ -15,8 +15,9 @@ color:white;
 position:relative;
 }
 
-/* BACKGROUND GRID */
-
+/* =========================
+   BACKGROUND GRID
+========================= */
 .bg-grid{
 position:fixed;
 width:100%;
@@ -28,8 +29,9 @@ background-size:40px 40px;
 z-index:-3;
 }
 
-/* FLOATING ICONS */
-
+/* =========================
+   FLOATING ICONS
+========================= */
 .floating-icons{
 position:fixed;
 width:100%;
@@ -46,25 +48,20 @@ animation:float linear infinite;
 }
 
 @keyframes float{
-
 0%{
 transform:translateY(120vh) rotate(0deg);
 opacity:0;
 }
-
-20%{
-opacity:1;
-}
-
+20%{opacity:1;}
 100%{
 transform:translateY(-120vh) rotate(360deg);
 opacity:0;
 }
-
 }
 
-/* HERO SECTION */
-
+/* =========================
+   HERO SECTION
+========================= */
 .hero{
 height:100vh;
 display:flex;
@@ -74,8 +71,7 @@ position:relative;
 overflow:hidden;
 }
 
-/* LIGHT RINGS */
-
+/* rotating rings */
 .light-ring{
 position:absolute;
 width:350px;
@@ -92,15 +88,12 @@ animation-direction:reverse;
 }
 
 @keyframes rotate{
-
-100%{
-transform:rotate(360deg);
+100%{transform:rotate(360deg);}
 }
 
-}
-
-/* START BUTTON */
-
+/* =========================
+   START BUTTON
+========================= */
 .start-button{
 width:180px;
 height:180px;
@@ -115,8 +108,9 @@ position:relative;
 box-shadow:
 0 0 30px #59ddff,
 0 0 100px #0077ff;
-transition:.5s;
+transition:.4s;
 animation:pulse 2s infinite;
+z-index:10;
 }
 
 .start-button:hover{
@@ -133,24 +127,22 @@ filter:blur(15px);
 }
 
 @keyframes pulse{
-
 50%{
 box-shadow:
 0 0 50px #59ddff,
 0 0 140px #0077ff;
 }
-
 }
 
-/* MAIN SECTION */
-
+/* =========================
+   MAIN SECTION
+========================= */
 .main-section{
 padding:50px 20px 120px;
 display:none;
 }
 
-/* GLASS BOX */
-
+/* glass container */
 .glass-container{
 max-width:1200px;
 margin:auto;
@@ -164,21 +156,19 @@ animation:showBox 1s ease;
 }
 
 @keyframes showBox{
-
 from{
 opacity:0;
 transform:translateY(100px) scale(.8);
 }
-
 to{
 opacity:1;
 transform:translateY(0) scale(1);
 }
-
 }
 
-/* TITLE */
-
+/* =========================
+   TITLE
+========================= */
 .main-title{
 text-align:center;
 font-size:42px;
@@ -188,8 +178,9 @@ color:#95efff;
 text-shadow:0 0 20px #42d8ff;
 }
 
-/* CARDS */
-
+/* =========================
+   CARDS
+========================= */
 .cards-container{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -204,7 +195,7 @@ padding:40px 20px;
 border-radius:30px;
 overflow:hidden;
 cursor:pointer;
-transition:.5s;
+transition:.4s;
 text-align:center;
 }
 
@@ -225,8 +216,7 @@ color:#71e8ff;
 font-size:28px;
 }
 
-/* SHINE EFFECT */
-
+/* shine effect */
 .shine{
 position:absolute;
 width:300%;
@@ -242,8 +232,9 @@ transition:1s;
 left:150%;
 }
 
-/* OVERLAY */
-
+/* =========================
+   OVERLAY
+========================= */
 .overlay{
 position:fixed;
 inset:0;
@@ -253,54 +244,51 @@ display:none;
 z-index:100;
 }
 
-/* POPUP */
-
+/* =========================
+   POPUP (FIXED SIZE ISSUE)
+========================= */
 .popup{
 position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%) scale(.4);
-width:90%;
-max-width:900px;
+width:85%;
+max-width:750px;
+max-height:80vh;
 background:rgba(5,15,28,.96);
 border:1px solid #5fe0ff55;
-border-radius:35px;
-padding:50px;
+border-radius:30px;
+padding:35px;
 display:none;
 opacity:0;
 z-index:200;
-overflow:hidden;
+overflow-y:auto;
+overflow-x:hidden;
 box-shadow:
 0 0 50px #49d9ff,
 0 0 150px #0077ff55;
-transition:.6s;
+transition:.5s;
 }
 
 .popup.active{
 display:block;
 opacity:1;
 transform:translate(-50%,-50%) scale(1);
-animation:epicPopup .8s ease;
+animation:epicPopup .7s ease;
 }
 
-/* EPIC ANIMATION */
-
 @keyframes epicPopup{
-
 0%{
 transform:translate(-50%,-50%) scale(.2) rotate(-10deg);
 filter:blur(10px);
 }
-
 100%{
-transform:translate(-50%,-50%) scale(1) rotate(0deg);
+transform:translate(-50%,-50%) scale(1) rotate(0);
 filter:blur(0);
 }
-
 }
 
-/* POPUP GLOW */
-
+/* popup glow */
 .popup-glow{
 position:absolute;
 width:400px;
@@ -313,52 +301,42 @@ animation:moveGlow 6s infinite alternate;
 }
 
 @keyframes moveGlow{
-
-100%{
-transform:translateX(300px);
+100%{transform:translateX(300px);}
 }
 
-}
-
-/* POPUP TITLE */
-
+/* popup text */
 .popup h1{
-font-size:38px;
-margin-bottom:30px;
+font-size:30px;
+margin-bottom:20px;
 color:#8eecff;
-position:relative;
 z-index:2;
+position:relative;
 }
-
-.popup h1 i{
-margin-left:10px;
-}
-
-/* POPUP TEXT */
 
 .popup p{
-line-height:2.3;
-font-size:22px;
+line-height:2;
+font-size:18px;
 color:#dcf9ff;
-position:relative;
 z-index:2;
+position:relative;
 }
 
-/* CLOSE BUTTON */
-
+/* =========================
+   CLOSE BUTTON
+========================= */
 .close-btn{
 position:absolute;
-top:20px;
-left:20px;
-width:55px;
-height:55px;
+top:15px;
+left:15px;
+width:50px;
+height:50px;
 border:none;
 border-radius:50%;
 background:#10253d;
 color:#78e7ff;
-font-size:25px;
+font-size:22px;
 cursor:pointer;
-transition:.4s;
+transition:.3s;
 z-index:5;
 }
 
@@ -367,8 +345,9 @@ transform:rotate(180deg) scale(1.1);
 box-shadow:0 0 20px #54dcff;
 }
 
-/* PARTICLES */
-
+/* =========================
+   PARTICLES
+========================= */
 .particle{
 position:absolute;
 border-radius:50%;
@@ -378,34 +357,37 @@ animation:explode 1.6s linear forwards;
 }
 
 @keyframes explode{
-
 0%{
 transform:translate(0,0) scale(1);
 opacity:1;
 }
-
 100%{
 transform:translate(var(--x),var(--y)) scale(0);
 opacity:0;
 }
-
 }
 
-/* RESPONSIVE */
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media(max-width:768px){
 
 .main-title{
 font-size:28px;
 }
 
-.popup p{
-font-size:18px;
-line-height:2;
+.popup{
+width:92%;
+padding:25px;
 }
 
 .popup h1{
-font-size:30px;
+font-size:24px;
+}
+
+.popup p{
+font-size:16px;
+line-height:1.9;
 }
 
 .start-button{
@@ -415,7 +397,6 @@ font-size:30px;
 }
 
 .glass-container{
-padding:30px 20px;
+padding:25px;
 }
-
 }
